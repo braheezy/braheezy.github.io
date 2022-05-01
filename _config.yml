@@ -118,8 +118,10 @@ assets:
 
 paginate: 10
 
-plugins:
-  - jemoji
+# Adding plugins currently breaks the Chripy theme. Uncomment when fix is released
+# https://github.com/cotes2020/jekyll-theme-chirpy/issues/537
+# plugins:
+#   - jemoji
 
 # ------------ The following options are not recommended to be modified ------------------
 
