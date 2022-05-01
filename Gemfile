@@ -23,3 +23,6 @@ gem "webrick", "~> 1.7"
 # Provide useful commands for managing posts
 gem 'jekyll-compose', group: [:jekyll_plugins]
 gem 'tzinfo-data', group: [:jekyll_plugins]
+
+# Github-emoji support
+gem 'jemoji'
