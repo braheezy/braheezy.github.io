@@ -16,17 +16,17 @@ lang: en
 prefer_datetime_locale:
 
 # Change to your timezone › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
-timezone:
+timezone: Pacific Time
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Chirpy                          # the main title
+title: TBD Tech Blog 
 
-tagline: A text-focused Jekyll theme   # it will display as the sub-title
+tagline: A tech blog of TBD material
 
 description: >-                        # used by seo meta and the atom feed
-  A minimal, responsive, and powerful Jekyll theme for presenting professional writing.
+  Tutorials and articles on dev topics, like DevOps and automation
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: https://braheezy.github.io
@@ -41,7 +41,7 @@ twitter:
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: Michael Braha
+  name: braheezy
   email: michael.c.braha@gmail.com
   links:
     # The first element serves as the copyright owner's link
