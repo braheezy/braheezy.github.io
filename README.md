@@ -1,6 +1,13 @@
 # TBD Tech Blog
 Some intro text about the project
 
+## Prerequisites
+You too can run this website.
+
+**Fedora**
+gcc-c++
+Run `bundle`
+
 ## Dev Usage
 Some useful commands:
 - Run local server to test changes: `bundle exec jekyll s`
