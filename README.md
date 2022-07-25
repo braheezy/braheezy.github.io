@@ -5,8 +5,8 @@ Some intro text about the project
 You too can run this website.
 
 **Fedora**
-gcc-c++
-Run `bundle`
+- gcc-c++
+- Run `bundle`
 
 ## Dev Usage
 Some useful commands:
@@ -14,8 +14,12 @@ Some useful commands:
 - After adding new gem to `Gemfile`, run `bundle`
 
 ## Jekyll Compose Workflow
-- Make a new draft: `bundle exe jekyll draft <title>`
+- Make a new draft: `bundle exec jekyll draft <title>`
 - Write that content baby
-- Move draft to posts when ready: `bundle exe jekyll publish <title> --timestamp-format "%Y-%m-%d %H:%M:%S %z"`
+- Move draft to posts when ready: `bundle exe jekyll publish _drafts/<filename> --timestamp-format "%Y-%m-%d %H:%M:%S %z"`
 - ??
 - Profit
+
+## Categories
+- Guides: A post on how to get something done.
+- Golang A Go Go: Posts related to learning Go.
