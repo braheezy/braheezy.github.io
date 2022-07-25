@@ -1,11 +1,13 @@
 ---
 layout: post
-title: 'Packer on WSL: Just Use LinuxPacker on WSL: Just Use Linux'
+title: 'Packer on WSL: Just Use Linux'
 date: 2022-05-06 05:09 +0000
 categories:
-- Packer
+- Guides
 tags:
-- virtualization
+- Packer
+- WSL
+- Virtualization
 ---
 # Figuring It All Out
 Consider you have the following needs/limitations:
@@ -14,7 +16,7 @@ Consider you have the following needs/limitations:
 - A desire to use [Ansible](https://docs.ansible.com/ansible/latest/user_guide/windows_setup.html) to provision Windows VMs
 - No support for nested virtualization
 
-In my special case, I'm using a Windows 10 Home edition which lacks certain virtualization features you might find in the Pro version (like running Hyper-V). So I'm using [VirtualBox](https://www.virtualbox.org/) as the hypervisor. I also have Ubuntu running on WSL. 
+In my special case, I'm using a Windows 10 Home edition which lacks certain virtualization features you might find in the Pro version (like running Hyper-V). So I'm using [VirtualBox](https://www.virtualbox.org/) as the hypervisor. I also have Ubuntu running on WSL.
 
 Ready to get started, I installed `packer` and `ansible`. I know Packer just calls `VBoxManage.exe` (Windows) or `vboxmanage` (Linux) underneath, and that was installed on my Windows side. I verified I could see it in WSL:
 ```console
@@ -24,7 +26,7 @@ braheezy@homebase:~/windows-pipeline$ VBoxManage.exe --version
 Nice! Microsoft's [promise](https://docs.microsoft.com/en-us/windows/wsl/filesystems#interoperability-between-windows-and-linux-commands) holds up. Indeed, we can see in it our path:
 ```console
 braheezy@homebase:~/windows-pipeline$ echo $PATH
-blahblahblah:/mnt/c/Program Files/Oracle/VirtualBox 
+blahblahblah:/mnt/c/Program Files/Oracle/VirtualBox
 ```
 To get on the same page, here's what the working directory looks like.
 ```console

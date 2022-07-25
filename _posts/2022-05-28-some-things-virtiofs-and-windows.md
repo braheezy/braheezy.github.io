@@ -2,6 +2,11 @@
 layout: post
 title: Some Things Virtiofs and Windows
 date: '2022-05-28 22:49:38 +0000'
+categories:
+- Guides
+tags:
+- QEMU
+- Virtualization
 ---
 This post hopes to explain how to enable a shared folder with a Windows guest on Libvirt/QEMU using Virtiofs.
 
