@@ -1,5 +1,48 @@
 baseURL: https://braheezy.github.io
+title: Blog O' Braheezy
+theme: PaperMod
+
 disablePathToLower: true
 languageCode: en-us
-title: TBD Tech Blog
-theme: PaperMod
+enableEmoji: true
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # is necessary
+
+menu:
+  main:
+    - name: Search
+      url: search/
+      weight: 10
+    - name: Tags
+      url: tags/
+      weight: 10
+
+params:
+  ShowReadingTime: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowToc: true
+  hideFooter: true
+
+  homeInfoParams:
+    Title: Blog O' Braheezy
+    Content: >
+      A collection of technical musings.
+
+      - Come, gather wool with me.
+
+  socialIcons:
+    - name: GitHub
+      url: https://github.com/braheezy
+    - name: cv
+      url: https://resume.braheezy.net
+
+  assets:
+    favicon: /assets/favicon/worker/favicon.ico
+    favicon16x16: /assets/favicon/worker/favicon-16x16.png
+    favicon32x32: /assets/favicon/worker/favicon-32x32.png
+    apple_touch_icon: /assets/favicon/worker/apple-touch-icon.png
