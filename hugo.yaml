@@ -1,0 +1,5 @@
+baseURL: https://braheezy.github.io
+disablePathToLower: true
+languageCode: en-us
+title: TBD Tech Blog
+theme: PaperMod
