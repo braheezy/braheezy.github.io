@@ -15,7 +15,7 @@ TEXT_COLOR=$YELLOW
 TOTAL_COLOR=$GREEN
 
 # Thanks ChatGPT...
-for dir in _posts _drafts; do
+for dir in content/posts _drafts; do
   gum style --foreground $FOLDER_COLOR "$dir/"
   while read -r wordcount filename; do
     # extract filename without directory
