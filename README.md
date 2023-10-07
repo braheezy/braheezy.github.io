@@ -8,5 +8,9 @@ Install `hugo`:
 
     mv hugo /usr/local/bin
 
+## Running locally
+
+    hugo server
+
 ## Licensing Note
 Generally everything is MIT except the posts I wrote, those are under the Creative Commons license.

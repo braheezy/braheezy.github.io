@@ -16,10 +16,13 @@ menu:
   main:
     - name: Search
       url: search/
-      weight: 10
+    - name: Posts
+      url: posts/
     - name: Tags
       url: tags/
-      weight: 10
+    - identifier: projects
+      name: Projects
+      url: projects/
 
 params:
   ShowReadingTime: true
@@ -33,7 +36,7 @@ params:
     Content: >
       A collection of technical musings.
 
-      - Come, gather wool with me.
+      - Come, gather wool.
 
   socialIcons:
     - name: GitHub
