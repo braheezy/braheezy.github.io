@@ -14,7 +14,7 @@ Indeed, it turned out to be an excellent experience! You can check out my final 
 
 This blog post aims to chronicle my journey in completing this challenge. Throughout the post, I will highlight interesting aspects and obstacles I encountered along the way. While I won't provide a comprehensive tutorial, as the challenge is meant to be a learning process, I might share enough information to offer some guidance if you find yourself stuck in your own cloud resume challenge.
 
-![Architecture link](/static/assets/img/resume-cloud-architecture.png)
+![Architecture link](/assets/img/resume-cloud-architecture.png)
 
 # Das Code
 If you just want to see the code, look no further:
@@ -229,7 +229,7 @@ For building and releasing the project, I have [`Makefile`s](https://www.tutoria
 
 I incorporated [GitHub workflows](https://docs.github.com/en/actions/using-workflows/about-workflows) that trigger builds and tests for `resumerk` as I make updates to the program. When new tags are created, a Release is automatically created in GitHub and the program is distributed from there in an archive format.
 
-![resumerk-workflows link](/static/assets/img/resumerk-workflows.png)
+![resumerk-workflows link](/assets/img/resumerk-workflows.png)
 
 ## Resume as Code
 In a "Resume as Code" paradigm, the resume is treated as software engineers treat code. Here's how I implemented it:
@@ -240,7 +240,7 @@ In a "Resume as Code" paradigm, the resume is treated as software engineers trea
 
 All of the above actions are automatically applied by GitHub workflows. I edit my resume on my local computer in Markdown, push the change to the GitHub repository, and the HTML website eventually updates.
 
-![resume-workflows link](/static/assets/img/cloudy-resume-workflows.png)
+![resume-workflows link](/assets/img/cloudy-resume-workflows.png)
 
 # Static Website
 A static website is the simplest type of web deployment. It involves placing web files (e.g. HTML, CSS, JS) in a specific location and configuring a web server to serve the HTML file when requested. Unlike dynamic websites, there is no backend server generating additional web content that the viewer needs to download. To update a static website, the owner simply needs to modify the existing files. In the case of a resume, serving a single `resume.html` file is an ideal use case for a static website.
@@ -389,7 +389,7 @@ func main() {
 The aforementioned backend task only runs when it is called, which the website does the first time it loads. While the API Gateway always needs to be running, it is inefficient to have the processing task continuously running on a computer. The modern solution to this problem is to spin up a computer only when the task needs to be performed. This concept is commonly known as ***Serverless***, and AWS provides their own offering called **AWS Lambda**. By providing your code in a zip file and specifying the programming language, AWS takes care of the rest of creating a machine with the tools to run it. They will do spin up a machine every time the AWS Lambda function is called.
 
 Like other components in this project, the Site Analytics code uses GitHub workflows:
-![resume analytics workflows link](/static/assets/img/resume-analytics-workflows.png)
+![resume analytics workflows link](/assets/img/resume-analytics-workflows.png)
 
 All these components come together to form the backend system, allowing for the seamless processing of visitor counts:
 

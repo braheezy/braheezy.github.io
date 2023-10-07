@@ -65,7 +65,7 @@ Some playbook snippets for creating a Firefox profile:
 
 To apply the theme, I'd like to download the theme file to disk and put it in the same spot(s) it would go if installed through the browser. To get the download link, I try going directly to the addon store and seeing what link the "Install Theme" button gives me.
 
-![Firefox Install Theme button link](/static/assets/img/Firefox_addon.png)
+![Firefox Install Theme button link](/assets/img/Firefox_addon.png)
 
 Cool, it's an `.xpi` file[^1]. But that `3954898` in the URL smells like a randomly generated build number that's probably going to change often. I don't want to update this playbook every time that happens. Can I ask Firefox for the information?
 
