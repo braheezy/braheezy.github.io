@@ -1,14 +1,10 @@
 ---
-categories:
-- Golang A Go Go
 date: "2023-10-04T19:45:34Z"
 tags:
 - Go
 - Audio
-title: 'MP3 Encoding in Go'
+title: 'What I Learned About MP3 Encoding'
 ---
-
-*TLDR; I ported an [MP3 encoder to Go](https://github.com/braheezy/shine-mp3).*
 
 ## The Best MP3 Encoder is LAME
 When it comes to MP3 encoding, there is one de-facto leader in the open-source industry: [LAME](https://lame.sourceforge.io/index.php). It's been given the attention of software and audio engineers [for years](https://svn.code.sf.net/p/lame/svn/trunk/lame/doc/html/history.html) which shows in the extensive features it comes with. If you want to encode audio data to MP3 with professional performance and quality, you either use LAME or [something built on top of it](https://lame.sourceforge.io/links.php).
@@ -21,17 +17,17 @@ If you're a programmer and want to encode audio data to MP3, you likely search y
 - Rust: [LAME bindings](https://crates.io/crates/mp3lame-encoder), but Rust flavored.
 - Java: Nice! A [native port of LAME](https://github.com/Sciss/jump3r).
 - Go: More [LAME bindings](https://github.com/viert/go-lame).
-- JavaScript: Another [pure port!](https://github.com/zhuker/lamejs)...well, it's a port of the `jump3r-code` Java port of LAME
+- JavaScript: Another [pure port!](https://github.com/zhuker/lamejs)...well, it's a port of the `jump3r-code` Java port of LAME.
 
 It's LAME all the way down.
 
-During [my work](https://github.com/braheezy/goqoa) with the [Quite OK Audio (QOA)](https://qoaformat.org/) format, I was having tons of fun converting QOA files, something that no tool or library knows about, into various audio formats including MP3. That's when I met LAME for the first time, introduced by the Go bindings that [go-lame](https://github.com/viert/go-lame) provides. With all my Go projects, I like to support Linux, Mac, and Windows platforms, but `go-lame` doesn't explicitly state it will support Windows platforms. It was up to me! And maybe ChatGPT.
+During [my play](https://github.com/braheezy/goqoa) with the [Quite OK Audio (QOA)](https://qoaformat.org/) format, I was having tons of fun converting QOA files, something that no tool or library knows about, into various audio formats including MP3. That's when I met LAME for the first time, introduced by the Go bindings that [go-lame](https://github.com/viert/go-lame) provides. With all my Go projects, I like to support Linux, Mac, and Windows platforms, but `go-lame` doesn't explicitly state it will support Windows platforms. It was up to me! And maybe ChatGPT.
 
 No matter what I tried with C cross compilers, native Windows environments, and the slew of magic-build-everything-containers out there claiming to have all the tools bundled, I could not get `go-lame` to build for Windows.
 
 Exasperated, I pushed out with development on my QOA program by not supporting MP3 on Windows. But this left a bad taste in my mouth...if only I had a pure Go library that didn't need to work with C at all.[^1]
 
-# Where The Encoding At?
+## Where The Encoding At?
 Full of hubris, I considered writing my own MP3 encoder implementation. How difficult could it be?
 
 *Narrator: It's very difficult.*
@@ -79,7 +75,7 @@ Accepting that I won't be writing a new MP3 implementation from scratch, I next 
 I had to remember I was only here on a side quest to resolve a bug in my QOA program, where MP3 itself is no one special. I needed a quicker path to success. I don't need no fancy MP3 encoder.
 
 LAME is nice enough to [mention alternative encoders](https://lame.sourceforge.io/links.php#Alternatives), bragging when they can about their superior implementation (and they should!). One entry on the list caught my eye:
-> Shine is a featureless, but clean and readable MP3 encoder by Gabriel Bouvigne of LAME fame. Great as a starting point or learning tool. Also probably the only open source, fixed point math MP3 encoder.
+> **Shine** is a featureless, but clean and readable MP3 encoder by Gabriel Bouvigne of LAME fame. Great as a starting point or learning tool. Also probably the only open source, fixed point math MP3 encoder.
 
 This sounds exactly what I'm looking for:
 - [x] Open source
@@ -89,7 +85,7 @@ This sounds exactly what I'm looking for:
 
 A quick internet search led me to the apparent [modern form of Shine](https://github.com/toots/shine). With FAR less code to reason about, I had found an MP3 encoder to port.
 
-# Poof: Turning C to Go
+## Poof: Turning C to Go
 This took my two serious attempts. Which was unfortunate but it did give me a better understanding of the program as a whole =]
 
 In my first attempt, I sat down file by file and wrote each C function to it's Go counterpart. A lot of it I just threw at ChatGPT and asked it to convert, or asked it how certain C tricks could be done in Go.
