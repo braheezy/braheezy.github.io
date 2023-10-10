@@ -177,9 +177,9 @@ Sure, we've got this `libc` import now and I was trying to avoid C, but it works
 ## Graduating to a Pure Go Library
 The last task was to hunt through the code and remove every use of `cxgo/runtime/libc`. As a bonus, I'd also try to remove the `unsafe` package because safe is better than unsafe, right?
 
-Pruning `libc` ended up being easy work of replacing mathematical functions with their appropriate `math` counterpart. Making the library safe proved more challenging. As of this writing, there is an [open issue on the library](https://github.com/braheezy/shine-mp3/issues/1) to remove the last usage of the `unsafe` package. There's only one more, can you figure it out?
+Pruning `libc` ended up being easy work of replacing mathematical functions with their appropriate `math` counterpart. Making the library safe proved more challenging. As of this writing, there is an [open issue on the library](https://github.com/braheezy/shine-mp3/issues/1) to remove the last usage of the `unsafe` package. There's only one more. Can you figure it out?
 
-There's no C left, so mission accomplished! Now Windows folks can encode MP3 files in pure Go. Yay?
+There's no C left so mission accomplished! Now Windows folks can encode MP3 files in pure Go. Yay?
 
 [^1]: For non-programmers, a port is software written in a different language.
 [^2]: Yes I know there are quicker ways to accomplish this than writing a whole library. Get off my lawn!
