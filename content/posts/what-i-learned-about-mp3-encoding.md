@@ -71,7 +71,7 @@ Accepting that I won't be writing a new MP3 implementation from scratch, I next 
 16k lines of obscure C, riddled with pointer magic and arcane memory manipulations? No thanks!
 
 ## Can Other MP3 Encoders Shine?
-I had to remember I was only here on a side quest to resolve a bug in my QOA program. MP3 it just is no one special. I needed a quicker path to success. I don't need no fancy MP3 encoder.
+I had to remember I was only here on a side quest to resolve a bug in my QOA program. MP3 is no one special. I needed a quicker path to success. I don't need no fancy MP3 encoder.
 
 LAME is nice enough to [mention alternative encoders](https://lame.sourceforge.io/links.php#Alternatives), bragging when they can about their superior implementation (and they should!). One entry on the list caught my eye:
 > **Shine** is a featureless, but clean and readable MP3 encoder by Gabriel Bouvigne of LAME fame. Great as a starting point or learning tool. Also probably the only open source, fixed point math MP3 encoder.
