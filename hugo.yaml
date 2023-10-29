@@ -6,6 +6,11 @@ disablePathToLower: true
 languageCode: en-us
 enableEmoji: true
 
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
 outputs:
   home:
     - HTML
