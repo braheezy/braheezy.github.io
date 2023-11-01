@@ -3,6 +3,7 @@ date: "2023-10-04T19:45:34Z"
 tags:
 - Go
 - Audio
+- MP3
 title: 'What I Learned About MP3 Encoding'
 ---
 
