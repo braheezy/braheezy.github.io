@@ -7,7 +7,7 @@ title: 'Ms. Pac-Man: Devlog 1'
 ---
 
 ## A New Project
-I play lots of video games, mostly on the Switch. And this is mostly a programming blog, so I must like that too. I should especially like combining these two.
+I play lots of video games, mostly on the Switch. And this is mostly a programming blog so I must like that too. I should especially like combining these two.
 
 The obvious overlap is programming a game. I've made a couple small toy games:
 - [Snake](https://github.com/braheezy/snakePy)
@@ -15,9 +15,9 @@ The obvious overlap is programming a game. I've made a couple small toy games:
 - [Hangman](https://github.com/braheezy/hangman)
 ![hangman](assets/light-demo-hangman.png)
 
-In both cases though, the game just happened to be the *type* of application I was writing. For Snake, it was my first GUI-from-scratch project and [Tkinter](https://www.wikiwand.com/en/Tkinter) graphics were the focus. For Hangman, it was my first non-trivial TUI and TUIs in general (plus the framework I used, [bubbletea](https://github.com/charmbracelet/bubbletea)) were the focus.
+In both cases though, the game just happened to be the *type* of application I was writing. For Snake, it was my first GUI-from-scratch project and [Tkinter](https://www.wikiwand.com/en/Tkinter) graphics were the focus. For Hangman, it was my first non-trivial TUI and TUIs in general (plus the framework I used, [bubbletea](https://github.com/charmbracelet/bubbletea),) were the focus.
 
-I decided it was time for a project where the game *itself* was the focus. Something more complex than my previous projects but not too complex ;) and I am not a creative person, so copying an existing game felt like the best route. I leafed through some old arcade games and existing projects on GitHub. I almost did Space Invaders, then started liking the idea of Pac-Man, then noticed the lack of love for Ms. Pac-Man in hobby ports. Behind every great man is an even greater women so...
+I decided it was time for a project where the game *itself* was the focus. Something more complex than my previous projects but not too complex ;) and I am not a creative person, so copying an existing game felt like the best route. I leafed through some old arcade games and existing projects on GitHub. I almost did Space Invaders, then started liking the idea of Pac-Man, then noticed the lack of love for Ms. Pac-Man in hobby ports. Behind every great man is an even greater woman so...
 
 ## My, My, Ms. Pac-Man
 Having landed on a palatable project idea (not all are!), I needed to figure out my high-level approach. What tools? What would my Ms. Pac-Man game look and feel like?
