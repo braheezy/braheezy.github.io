@@ -14,13 +14,11 @@ tags:
 ShowToc: false
 ---
 
+# What
+A port of the [Shine MP3 encoding C library](https://github.com/toots/shine) to Go, making it one of the only pure Go MP3 encoding packages out there.
+
 # Code
 https://github.com/braheezy/shine-mp3
-
-# What
-A port of the [Shine MP3 encoding C library](https://github.com/toots/shine) to Go.
-
-The C and Go library produce byte-identical binaries, as seen in the screenshot above.
 
 # Demo
 A simple WAV file:
@@ -35,8 +33,7 @@ The WAV file converted to MP3 by the C Shine library:
 
 {{< audio src="/assets/sounds/test.shineenc-C.mp3" caption="test.shineenc-C.mp3" >}}
 
-# Why
+# Thoughts
 In a different project, I wanted to support MP3 encoding on Windows platforms without needing `CGO` enabled.
 
-# Thoughts
-See the post here: [What I Learned About MP3 Encoding](../../posts/what-i-learned-about-mp3-encoding).
+For more thoughts, see the post here: [What I Learned About MP3 Encoding](../../posts/what-i-learned-about-mp3-encoding).
