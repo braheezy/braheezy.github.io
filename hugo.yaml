@@ -1,5 +1,5 @@
 baseURL: https://braheezy.github.io
-title: Blog O' Braheezy
+title: blog o' braheezy
 theme: PaperMod
 
 disablePathToLower: true
@@ -19,14 +19,14 @@ outputs:
 
 menu:
   main:
-    - name: Search
+    - name: search
       url: search/
-    - name: Posts
+    - name: posts
       url: posts/
-    - name: Tags
+    - name: tags
       url: tags/
     - identifier: projects
-      name: Projects
+      name: projects
       url: projects/
 
 params:
