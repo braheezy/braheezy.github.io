@@ -1,0 +1,184 @@
+{{ $projects := .Inner }}
+
+<style>
+.project-explorer {
+    margin: 2rem 0;
+}
+
+.domain-filter {
+    margin-bottom: 2rem;
+}
+
+#active-domains, #available-domains {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.domain-filter-btn {
+    padding: 0.4rem 0.8rem;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    background: var(--entry);
+    color: var(--primary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.domain-filter-btn:hover {
+    background: var(--primary);
+    color: var(--entry);
+}
+
+#active-domains .domain-filter-btn {
+    background: var(--primary);
+    color: var(--entry);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    padding: 1.2rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--entry);
+    transition: transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-3px);
+}
+
+.project-card h3 {
+    margin: 0 0 0.8rem 0;
+    color: var(--primary);
+    font-size: 1.2rem;
+}
+
+.project-desc {
+    margin-bottom: 0.8rem;
+    color: var(--secondary);
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.domain-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 0.8rem;
+}
+
+.domain-tag {
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    background: var(--code-bg);
+    color: var(--secondary);
+    font-size: 0.8rem;
+}
+
+.project-meta {
+    margin-top: auto;
+    padding-top: 0.8rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.tech-stack {
+    color: var(--secondary);
+    font-size: 0.85rem;
+    line-height: 1.3;
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.project-meta a {
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.project-meta a:hover {
+    text-decoration: underline;
+}
+
+@media (min-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+</style>
+
+<div class="project-explorer">
+    <div class="domain-filter">
+        <h2>explore</h2>
+        <div id="active-domains"></div>
+        <div id="available-domains"></div>
+    </div>
+    <div class="projects-grid">
+        {{ $projects }}
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Collect all unique domains
+    const domains = new Set();
+    document.querySelectorAll('.domain-tag').forEach(tag => {
+        domains.add(tag.dataset.domain);
+    });
+
+    // Create domain filter buttons
+    const availableDomains = document.getElementById('available-domains');
+    const activeDomains = document.getElementById('active-domains');
+    const activeFilters = new Set();
+
+    domains.forEach(domain => {
+        const btn = document.createElement('button');
+        btn.textContent = domain.replace(/-/g, ' ');
+        btn.className = 'domain-filter-btn';
+        btn.dataset.domain = domain;
+        btn.onclick = () => toggleDomain(btn, domain);
+        availableDomains.appendChild(btn);
+    });
+
+    function toggleDomain(btn, domain) {
+        if (activeFilters.has(domain)) {
+            activeFilters.delete(domain);
+            availableDomains.appendChild(btn);
+        } else {
+            activeFilters.add(domain);
+            activeDomains.appendChild(btn);
+        }
+        updateVisibility();
+    }
+
+    function updateVisibility() {
+        document.querySelectorAll('.project-card').forEach(card => {
+            const cardDomains = card.dataset.domains.split(' ');
+            if (activeFilters.size === 0) {
+                card.style.display = 'block';
+                return;
+            }
+            const hasAllFilters = Array.from(activeFilters).every(filter =>
+                cardDomains.includes(filter)
+            );
+            card.style.display = hasAllFilters ? 'block' : 'none';
+        });
+    }
+});
+</script>

@@ -1,135 +1,39 @@
 ---
 title: hobby projects
 date:
-ShowToc: true
+ShowToc: false
 ---
+
 Some of the things I've made. Most of the repositories have more demo materials.
 
-- [audio](#audio)
-- [emulation](#emulation)
-- [graphics](#graphics)
-- [applications](#applications)
-- [languages](#languages)
+{{< project-explorer >}}
+{{< project-card name="zpix" desc="Pure Zig image decoding library supporting JPEG, PNG, and QOI formats with comprehensive color space handling and format features." domains="graphics systems" tech="Zig" repo="zpix" >}}
 
----
+{{< project-card name="znit" desc="A minimal init system written in Zig, based on Tini. Handles process supervision, zombie reaping, and signal forwarding in containers." domains="systems devops" tech="Zig" repo="znit" >}}
 
-## audio
-- **goqoa**
-  - A CLI tool for converting and playing handling [Quite OK Audio (QOA)](https://qoaformat.org/) files.
-  - **Technologies Used:** `Go`
-  - **Features:**
-    - convert WAV, FLAC, OGG, or MP3 files to QOA
-    - convert QOA files to WAV or MP3
-    - play QOA files
-  - **Repository:** [goqoa](https://github.com/braheezy/goqoa)
+{{< project-card name="zoleco" desc="A fully functional ColecoVision emulator written in Zig using SDL for graphics, accurately emulating the original hardware." domains="systems graphics emulation" tech="Zig" repo="zoleco" >}}
 
-- **QOA Preview for VS Code**
-  - VS Code extension to play [Quite OK Audio (QOA)](https://qoaformat.org/) files.
-  - **Technologies Used:** `TypeScript`, `HTML/JS/CSS`
-  - **Features:**
-    - play a QOA file
-    - using lots of CSS, looks visually similar to default audio player in VS Code
-  - **Repository:** [vscode-qoa-preview](https://github.com/braheezy/vscode-qoa-preview)
+{{< project-card name="shine-mp3" desc="A pure Go implementation of MP3 encoding, perhaps the only one in existence. Ported from the Shine MP3 project." domains="audio systems" tech="Go" repo="shine-mp3" >}}
 
-- [**wavvy**](https://wavvy.braheezy.net/)
-  - Website using WASM to play WAV files.
-  - **Technologies Used:** `Go`, `WASM`, `HTML/JS/CSS`
-  - **Features:**
-    - WAV decoding and playback in Go via WASM
-  - **Repository:** [wavvy](https://github.com/braheezy/wavvy)
+{{< project-card name="hobby-spline" desc="An interactive demonstration of Hobby's algorithm for smooth curve generation, featuring a WASM-powered interface." domains="graphics web" tech="Go, WASM, HTML/CSS" repo="hobby-spline" link="https://hobby-spline.braheezy.net/" >}}
 
-- **shine-mp3**
-  - A working MP3 encoder, perhaps the only one in pure Go. Ported from the Shine MP3 project.
-  - **Technologies Used:** `Go`
-  - **Features:**
-    - Create bit-identical MP3s to those created by the original C implementation.
-  - **Repository:** [shine-mp3](https://github.com/braheezy/shine-mp3)
+{{< project-card name="space-invaders" desc="Cycle-accurate emulation of the 1978 Space Invaders arcade hardware, including full 8080 CPU emulation." domains="systems graphics emulation" tech="Go" repo="space-invaders" >}}
 
----
+{{< project-card name="chip-8" desc="A complete CHIP-8 interpreter with support for multiple quirks and both GUI/TUI modes." domains="systems graphics emulation" tech="Go" repo="chip-8" >}}
 
-## emulation
+{{< project-card name="bubblelife" desc="3D visualization of Conway's Game of Life using thousands of bubbles, featuring HDRi lighting and custom shaders." domains="graphics systems" tech="Go, OpenGL" repo="bubblelife" >}}
 
-- **chip-8**
-  - A full CHIP-8 interpreter. Runs CHIP-8 ROMs.
-  - **Technologies Used:** `Go`
-  - **Features:**
-    - Run in GUI or TUI mode
-    - Timendus [test suite](https://github.com/Timendus/chip8-test-suite) compliant
-    - Support for COSMAC VIP and other quirks
-  - **Repository:** [chip-8](https://github.com/braheezy/chip-8)
+{{< project-card name="goqoa" desc="CLI tool for converting and playing QOA audio files, supporting multiple input formats." domains="audio tools" tech="Go" repo="goqoa" >}}
 
-- **space-invaders**
-  - An accurate emulation of 1978 Space Invaders arcade hardware.
-  - **Technologies Used:** `Go`
-  - **Features:**
-    - Full 8080 CPU emulator
-    - Cycle accurate timing
-    - Hardware accurate interrupt handling and sound
-    - Input via keyboard
-  - **Repository:** [space-invaders](https://github.com/braheezy/space-invaders)
+{{< project-card name="QOA Preview" desc="VS Code extension enabling playback of QOA audio files with a native-looking audio player." domains="audio ui/ux web" tech="TypeScript, HTML/CSS" repo="vscode-qoa-preview" >}}
 
----
+{{< project-card name="wavvy" desc="Web-based WAV file player using Go compiled to WebAssembly for audio processing." domains="audio web ui/ux" tech="Go, WASM, HTML/CSS" repo="wavvy" link="https://wavvy.braheezy.net/" >}}
 
-## graphics
+{{< project-card name="violet" desc="A colorful TUI frontend for Vagrant, making VM management more intuitive." domains="tools ui/ux devops" tech="Go" repo="violet" >}}
 
-- [**hobby-spline**](https://hobby-spline.braheezy.net/):
-  - An interactive demo website on Hobby Splines.
-  - **Technologies Used:** `Go`, `WASM`, `HTML/JS/CSS`
-  - **Features:**
-    - Embedded WASM GUI
-  - **Repository:** [hobby-spline](https://github.com/braheezy/hobby-spline)
+{{< project-card name="kilo" desc="Minimal terminal text editor in about 1000 lines of code, capable of editing its own source." domains="systems ui/ux" tech="Go" repo="kilo" >}}
 
-- **bubblelife**
-  - A bunch of bubbles arranged in a 3D pillar, updating according to Conway's Game of Life.
-  - **Technologies Used:** `Go`, `OpenGL`
-  - **Features**
-    - Live settings to update population, pillar size, etc.
-    - Software calculed HDRi cubemap, text rendering, bespoke UI, Blinn-Phong shading
-    - Can render thousands of bubbles performantly with instanced point rendering
-  - **Repository:** [bubblelife](https://github.com/braheezy/bubblelife)
+{{< project-card name="gravlax" desc="Complete implementation of a tree-walk interpreter for the Lox language, with extra language features." domains="compilers systems" tech="Go" repo="gravlax" >}}
 
----
-
-## applications
-
-- **violet**
-  - Colorful TUI frontend to run Vagrant commands
-  - **Technologies Used:** `Go`
-  - **Features:**
-    - Supports `up`, `ssh`, `reload`, `provision`, and `halt`
-  - **Repository:** [violet](https://github.com/braheezy/violet)
-
-- **kilo**
-  - An absolute minimal terminal text editor.
-  - **Technologies Used:** `Go`
-  - **Features:**
-    - About 1k lines of code
-    - Able to edit it's own source code
-  - **Repository:** [kilo](https://github.com/braheezy/kilo)
-
-- **hangman**
-  - The classic game right in your terminal.
-  - **Technologies Used:** `Go`
-  - **Features:**
-    - Free fun
-  - **Repository:** [hangman](https://github.com/braheezy/hangman)
-
----
-
-## languages
-
-- **gravlax**
-  - Full implementation of a tree-walk interpreter for the educational language [Lox](https://craftinginterpreters.com).
-  - **Technologies Used:** `Go`
-  - **Features:**
-    - Full Lox language support
-    - Extra support for block comments and the `break` keyword
-  - **Repository:** [gravlax](https://github.com/braheezy/gravlax)
-
-- **zig-lox**
-  - Full implementation of a bytecode VM for the educational language [Lox](https://craftinginterpreters.com).
-  - **Technologies Used:** `Zig`
-  - **Features:**
-    - Full Lox language support
-    - Garbage collector
-  - **Repository:** [zig-lox](https://github.com/braheezy/zig-lox)
+{{< project-card name="zig-lox" desc="Bytecode VM implementation of the Lox language, featuring a custom garbage collector." domains="compilers systems" tech="Zig" repo="zig-lox" >}}
+{{< /project-explorer >}}

@@ -1,0 +1,27 @@
+{{ $name := .Get "name" }}
+{{ $desc := .Get "desc" }}
+{{ $domains := split (.Get "domains") " " }}
+{{ $tech := .Get "tech" }}
+{{ $repo := .Get "repo" }}
+{{ $link := .Get "link" }}
+
+<div class="project-card" data-domains="{{ .Get "domains" }}">
+    <h3>{{ $name }}</h3>
+    <p class="project-desc">{{ $desc }}</p>
+    <div class="domain-tags">
+        {{ range $domains }}
+        <span class="domain-tag" data-domain="{{ . }}">{{ replace . "-" " " }}</span>
+        {{ end }}
+    </div>
+    <div class="project-meta">
+        <div class="tech-stack">{{ $tech }}</div>
+        <div class="project-links">
+            {{ if $repo }}
+            <a href="https://github.com/braheezy/{{ $repo }}" target="_blank" rel="noopener noreferrer">source</a>
+            {{ end }}
+            {{ if $link }}
+            <a href="{{ $link }}" target="_blank" rel="noopener noreferrer">demo</a>
+            {{ end }}
+        </div>
+    </div>
+</div>
